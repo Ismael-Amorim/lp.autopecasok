@@ -1,0 +1,300 @@
+    :root {
+      --primary-red: #e20c26;
+      --secondary-white: #ffffff;
+      --dark-gray: #333333;
+      --light-gray: #f8f9fa;
+      --primary-red-rgb: 231, 76, 60;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--dark-gray);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--primary-red);
+    }
+
+    .nav-item a{
+      font-weight: bold !important;
+    }
+
+    .navbar-brand img {
+      max-height: 50px;
+    }
+
+    .nav-link {
+      color: var(--secondary-white) !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #ffd1dc !important;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('img/imagem-head.png') no-repeat center center;
+      background-size: cover;
+      /* garanta que a div tenha altura definida: */
+      width: 100%;
+      height: 100vh;
+      /* ou a altura desejada, ex: 600px */
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      color: var(--secondary-white);
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      color: var(--secondary-white);
+      font-size: 1.25rem;
+    }
+
+    .btn-light {
+      background-color: var(--secondary-white);
+      color: var(--primary-red);
+      border-radius: 2rem;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Section titles */
+    .section-title {
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Cards */
+    .card {
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+      color: var(--primary-red);
+      font-weight: 600;
+    }
+
+    /* Estilos gerais para o carrossel */
+    #carouselDepoimentos .carousel-item {
+      justify-content: center;
+      padding: 2rem 0;
+    }
+
+    /* Container do depoimento */
+    .depoimento {
+      position: relative;
+      max-width: 60rem;
+      background: var(--secondary-white);
+      border-left: 5px solid var(--primary-red);
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 2rem 1.5rem;
+      color: var(--dark-gray);
+      transition: transform .3s;
+    }
+
+    .depoimento:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Marca de aspas estilizada */
+    .depoimento::before {
+      content: open-quote;
+      font-family: serif;
+      font-size: 5rem;
+      color: var(--primary-red);
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      line-height: 1;
+    }
+
+    .depoimento-text {
+      margin: 0;
+      padding-top: 1rem;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      line-clamp: 5;
+      overflow: hidden;
+    }
+
+    /* Autor do depoimento */
+    .depoimento-author {
+      margin-top: 1.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: right;
+      color: #555;
+    }
+
+    /* Responsividade */
+    @media (max-width: 767px) {
+      .depoimento {
+        margin: 0 1rem;
+        padding: 1.5rem 1rem;
+      }
+
+      .depoimento::before {
+        font-size: 4rem;
+        top: 0.3rem;
+        left: 0.8rem;
+      }
+
+      .depoimento-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+      }
+    }
+
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-white);
+      color: var(--dark-gray);
+    }
+
+    footer a {
+      color: var(--secondary-white);
+    }
+
+
+    .stats-section,
+    .diferenciais-section,
+    .depoimentos-section {
+      background: var(--secondary-white);
+      color: var(--primary-red);
+    }
+
+    .stats-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgb(172, 4, 4);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .stats-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px var(--primary-red);
+    }
+
+    .stats-card h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--primary-red)
+    }
+
+    .stats-card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .stats-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    .quem-section,
+    .produtos-section,
+    .contato-section {
+      background: var(--primary-red);
+      color: var(--secondary-white);
+    }
+
+    .contato-section {
+      padding-top: 1.2rem !important;
+      padding-bottom: 1.2rem !important;
+    }
+    .contato-section input {
+      color: var(--dark-gray)  !important;
+    }
+
+    .card-icon {
+      color: #fff;
+      text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+
+    /* grid de cards */
+    .quem-card {
+      background: var(--secondary-white);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      height: 5rem;
+      justify-content: center;
+      gap: 1rem;
+      transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+    }
+
+    /* texto */
+    .quem-card p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--primary-red);
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* hover / destaque */
+    .quem-card:hover {
+      border-color: #D80027;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* responsivo: já já quebra em 1 coluna no xs */
+    @media (max-width: 575px) {
+      .quem-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .card-diferenciais {
+      margin-bottom: 1rem;
+    }
